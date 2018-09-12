@@ -1,0 +1,10 @@
+<br>
+<div class="container is-fluid">
+    <div class="columns is-multiline">
+        <% photos.forEach(photo =>{ %> 
+            <div class="column is-one-quarter">
+                 <img src=<%- '/photos/' + photo.path %> >
+            </div>
+        <%})%>
+    </div>
+</div>
