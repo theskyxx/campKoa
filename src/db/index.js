@@ -1,7 +1,7 @@
 const mysql = require('mysql')
 
 const configDB = {
-    host : '192.168.64.2' ,
+    host : 'localhost' ,
     user : 'code', 
     password : 'code', 
     database: 'codecs'
