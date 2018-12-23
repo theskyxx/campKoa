@@ -1,10 +1,75 @@
 <br>
-<div class="container is-fluid">
+<script> 
+    function sss() { 
+        var myChart = Highcharts.chart('container', {
+            
+            chart: {
+                type:  '<%- typ %>' 
+            },
+            title: {
+                text: '<%- title %>'
+            },
+            xAxis: {
+                type: 'datetime'
+            },
+            yAxis: {
+                title: {
+                    text: 'Meter'
+                }
+            },
+            legend: {
+        enabled: false
+                    },
+                    plotOptions: {
+                        area: {
+                        fillColor: {
+                            linearGradient: {
+                            x1: 0,
+                            y1: 0,
+                            x2: 0,
+                            y2: 1
+                            },
+                            stops: [
+                            [0, Highcharts.getOptions().colors[0]],
+                            [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                            ]
+                        },
+                        marker: {
+                            radius: 2
+                        },
+                        lineWidth: 1,
+                        states: {
+                            hover: {
+                            lineWidth: 1
+                            }
+                        },
+                        threshold: null
+                        }
+                    },
+                    series: [{
+                        type: 'views',
+                        data: data,
+                        pointStart: Date.UTC(year, month, day),
+        pointInterval: 24 * 3600 * 1000 // one day
+                    }]
+
+        });
+    };
+    </script>
+    
+<!-- <div class="container is-fluid">
     <div class="columns is-multiline">
         <% photos.forEach(photo =>{ %> 
             <div class="column is-one-quarter">
                  <img src=<%- '/photos/' + photo.path %> >
             </div>
         <%})%>
+
+       
     </div>
-</div>
+</div> -->
+<div id="co">    </div>
+
+
+
+<div id="container"></div>
