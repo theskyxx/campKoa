@@ -1,5 +1,5 @@
 // const bcrypt = require('bcrypt')  
-const db = require('../../../models/query')
+const db = require('../../../models/mysql')
  
 
 const getHandler = async (ctx) => { 
@@ -8,13 +8,13 @@ const getHandler = async (ctx) => {
 
 const postHandler = async (ctx) => { 
 	
-	console.log(ctx.request.body)
-	console.log('username: ', ctx.request.body.username)
- console.log('password: ', ctx.request.body.password)
+	//console.log(ctx.request.body)
+	//console.log('username: ', ctx.request.body.username)
+ //console.log('password: ', ctx.request.body.password)
 
-	sql = `INSERT INTO mas_user (user_id, password) VALUES (?, ? )`
+	sql = 'INSERT INTO mas_user (user_id, password) VALUES ( ? , ? )'
 
-	db.query(sql,[ctx.request.body.username,ctx.request.body.password])
+	await db.query(sql,[ctx.request.body.username,ctx.request.body.password])
 	await ctx.render('signin')
 }
 
