@@ -9,7 +9,7 @@ const getHandler = async (ctx) => {
     obj2.title = "test Chart"
     obj2.x1 = "event"
     obj2.y1 = "event"
-
+    obj2.data = [ '1','2' ]
     
 
     obj2.photos = [
@@ -42,6 +42,8 @@ const getHandler = async (ctx) => {
     })
 
     console.log(arrData);
+
+    obj2.arrData = arrData
 
   await ctx.render('home', obj2)
 }

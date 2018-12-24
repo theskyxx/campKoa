@@ -1,6 +1,8 @@
 <br>
 <script> 
+
     function sss() { 
+        let data = <%- JSON.stringify(arrData) %>
         var myChart = Highcharts.chart('container', {
             
             chart: {
@@ -50,7 +52,7 @@
                         type: 'views',
                         data: data,
                         pointStart: Date.UTC(year, month, day),
-        pointInterval: 24 * 3600 * 1000 // one day
+                        pointInterval: 24 * 3600 * 1000 // one day
                     }]
 
         });
@@ -64,12 +66,7 @@
                  <img src=<%- '/photos/' + photo.path %> >
             </div>
         <%})%>
-
-       
     </div>
 </div> -->
-<div id="co">    </div>
-
-
-
+<div id="co"></div>
 <div id="container"></div>

@@ -12,7 +12,7 @@ const postHandler = async (ctx) => {
 	//console.log('username: ', ctx.request.body.username)
  //console.log('password: ', ctx.request.body.password)
 
-	sql = 'INSERT INTO mas_user (user_id, password) VALUES ( ? , ? )'
+	sql = 'INSERT INTO mas_user (user_id, password) VALUES (? , ? )'
 
 	await db.query(sql,[ctx.request.body.username,ctx.request.body.password])
 	await ctx.render('signin')
